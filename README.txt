@@ -1,14 +1,4 @@
---Extreme Survival created by maikerumine
--- Minetest 0.4.13 mod: "Extreme Survival"
--- namespace: es
--- (c) 2014-2015 by: maikerumine
---https://github.com/maikerumine
---WTFPL
 
-
-
-Minetest 0.2 mod: es   ore generation and special crafting
-=======================
 
 ___________         __                                    _________                  .__              .__
 \_   _____/__  ____/  |________   ____   _____   ____    /   _____/__ ____________  _|__|__  _______  |  |
@@ -19,30 +9,17 @@ ___________         __                                    _________             
 
 
 
-License of source code:
------------------------
-Copyright (C) 2015 maikerumine
+--Extreme Survival created by maikerumine
+-- Minetest 0.4.13 mod: "Extreme Survival Lite"
+-- namespace: wxtreme_survival_lite
+--https://github.com/maikerumine
 
-WTFPL
+--License:
+--~~~~~~~~
+--Mixed CC-BY-SA 3.0 WTFPL
+--See individual mods for license info
+--see "LICENSE.txt" for details.
 
-
-License of textures:
------------------------
-Punkin: From TenPlus1's Farming mod: Added Pumpkin, Jack 'O Lantern, Pumpkin Slice and Sugar
-(a huge thanks to painterly.net for allowing me to use their textures)
-
-
-All es tools by maikerumine, based off of default tools.
-ores based off of default
-Blocks based off of diamond except infinium.
-
-
-
-
-
-
-
-es-- Maikerumine's Extreme Survival mod, has extra crafting recipies for tools and ores.
 
 
 
@@ -60,11 +37,16 @@ To craft an Infinium ingot you must craft first a vessel with Infinium goo to ge
 Water flowing comes from cooking ice in furnace.
 
 
+es-- Maikerumine's Extreme Survival mod, has extra crafting recipies for tools and ores.
+
+
+
+
+
 
 soft dependancies:
 
-
-esarmor
+armor
 mese_crystals
 technic
 
@@ -72,3 +54,59 @@ These are heavily modded to suit the Extreme Survival game.
 
 
 
+
+
+
+
+The main game for the Minetest game engine [minetest_game]
+==========================================================
+
+To use this game with Minetest, insert this repository as
+  /games/minetest_game
+in the Minetest Engine.
+
+The Minetest Engine can be found in:
+  https://github.com/minetest/minetest/
+
+Compatibility
+--------------
+The minetest_game github master HEAD is generally compatible with the github
+master HEAD of minetest.
+
+Additionally, when the minetest engine is tagged to be a certain version (eg.
+0.4.10), minetest_game is tagged with the version too.
+
+When stable releases are made, minetest_game is packaged and made available in
+  http://minetest.net/download
+and in case the repository has grown too much, it may be reset. In that sense,
+this is not a "real" git repository. (Package maintainers please note!)
+
+License of source code
+----------------------
+Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
+See README.txt in each mod directory for information about other authors.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; either version 2.1 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+License of media (textures and sounds)
+--------------------------------------
+Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
+See README.txt in each mod directory for information about other authors.
+
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+http://creativecommons.org/licenses/by-sa/3.0/
+
+License of menu/header.png
+Copyright (C) 2013 BlockMen CC BY-3.0
