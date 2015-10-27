@@ -14,11 +14,7 @@
 
 --Default override crafting
 
-minetest.register_alias("glass:hgglass", "es:hgglass")
-minetest.register_alias("mese_cook:mesecook_crystal", "es:mesecook_crystal")
-minetest.register_alias("protector_mese:protect", "protector:protect")
-minetest.register_alias("carts:rail_brake","carts:brakerail")
-minetest.register_alias("carts:rail_power","carts:powerrail")
+
 
 
 
@@ -68,6 +64,9 @@ minetest.register_craft({
 		{"bones:bones", "bones:bones", "bones:bones"},
 	},
 })
+--END BONE COLLECTOR
+
+
 
 minetest.register_craft({
 	output = 'es:messymese',
@@ -87,6 +86,7 @@ minetest.register_craft({
 
 
 --TECHNIC DEPENDANT
+--Comment out if not used technic
 minetest.register_craft({
 	type = 'cooking',
 	recipe = "es:depleted_uranium_ingot",
@@ -138,7 +138,7 @@ minetest.register_craft({
 		{"", "es:punkin", ""},
 	}
 })
-
+--END TECHNIC
 
 
 
@@ -161,6 +161,12 @@ minetest.register_craft({
 		{"default:papyrus", "default:papyrus", "default:papyrus"},
 	},
 })
+minetest.register_craft({
+	output = 'default:dirt 2',
+	recipe = {
+		{'stairs:stair_dirt', 'stairs:stair_dirt', 'stairs:stair_dirt'},
+	}
+})
 
 minetest.register_craft({
 	output = 'default:desert_cobble 3',
@@ -180,7 +186,7 @@ minetest.register_craft({
 	}
 })
 
-
+--ES SPECIAL BLOCKS
 minetest.register_craft({
 	output = 'es:emeraldblock',
 	recipe = {
@@ -189,6 +195,13 @@ minetest.register_craft({
 		{'es:emerald_crystal', 'es:emerald_crystal', 'es:emerald_crystal'},
 	}
 })
+minetest.register_craft({
+	output = 'es:emeraldblock 2',
+	recipe = {
+		{'stairs:stair_Emerald', 'stairs:stair_Emerald', 'stairs:stair_Emerald'},
+	}
+})
+
 
 minetest.register_craft({
 	output = 'es:aikerumblock',
@@ -198,6 +211,13 @@ minetest.register_craft({
 		{'es:aikerum_crystal', 'es:aikerum_crystal', 'es:aikerum_crystal'},
 	}
 })
+minetest.register_craft({
+	output = 'es:aikerumblock 2',
+	recipe = {
+		{'stairs:stair_Aikerum', 'stairs:stair_Aikerum', 'stairs:stair_Aikerum'},
+	}
+})
+
 
 minetest.register_craft({
 	output = 'es:rubyblock',
@@ -207,6 +227,13 @@ minetest.register_craft({
 		{'es:ruby_crystal', 'es:ruby_crystal', 'es:ruby_crystal'},
 	}
 })
+minetest.register_craft({
+	output = 'es:rubyblock 2',
+	recipe = {
+		{'stairs:stair_Ruby', 'stairs:stair_Ruby', 'stairs:stair_Ruby'},
+	}
+})
+
 
 minetest.register_craft({
 	output = 'es:infiniumblock',
@@ -216,7 +243,12 @@ minetest.register_craft({
 		{'es:infinium_ingot', 'es:infinium_ingot', 'es:infinium_ingot'},
 	}
 })
-
+minetest.register_craft({
+	output = 'es:infiniumblock 2',
+	recipe = {
+		{'stairs:stair_Infinium', 'stairs:stair_Infinium', 'stairs:stair_Infinium'},
+	}
+})
 
 
 minetest.register_craft({
@@ -341,7 +373,6 @@ minetest.register_craft({
 	burntime = 604800,
 })
 
---cooking
 minetest.register_craft({
 	type = "cooking",
 	output = "es:infinium_ingot 1",
@@ -354,7 +385,7 @@ minetest.register_craft({
 	output = "default:mese_crystal",
 	recipe = "es:mesecook_crystal",
 })
-
+--MUST HAVE DEFAULT ORE GENERATION SET 
 minetest.register_craftitem("es:mesecook_crystal", {
 	description = "Cookable Raw MESE",
 	inventory_image = "mese_cook_mese_crystal.png",

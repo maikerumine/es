@@ -1,2 +1,2 @@
 default
-,3d_armor?,technic?,mese_crystals?
+,stairs,3d_armor?,technic?,mese_crystals?

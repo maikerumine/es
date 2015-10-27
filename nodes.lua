@@ -116,6 +116,11 @@ minetest.register_craftitem("es:infinium_container", {
 	inventory_image = "infinium_container.png",
 })
 
+
+
+
+
+
 --Random craft ATM
 -- Jack 'O Lantern
 --Borrowed from TenPlus1's Farming Plus  Might change to original
@@ -167,8 +172,61 @@ minetest.register_node("es:messymese", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
---Stairs
 
+--default addon
+minetest.register_node("es:stone_with_mese", {
+	description = "Cookable Mese Ore",
+	tiles = {"default_stone.png^mese_cook_mese_crystal.png^default_mineral_mese.png"},
+	paramtype = "light",
+	groups = {cracky = 1},
+	drop = "es:mesecook_crystal",
+	sounds = default.node_sound_stone_defaults(),
+	light_source = 1,
+})
+
+minetest.register_node("es:desert_stone_with_gold", {
+	description = "Gold Ore",
+	tiles = {"default_desert_stone.png^default_mineral_gold.png"},
+	groups = {cracky = 2},
+	drop = "default:gold_lump",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+minetest.register_node("es:desert_stone_with_iron", {
+	description = "Iron Ore",
+	tiles = {"default_desert_stone.png^default_mineral_iron.png"},
+	groups = {cracky = 2},
+	drop = 'default:iron_lump',
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+minetest.register_node("es:desert_stone_with_coal", {
+	description = "Coal Ore",
+	tiles = {"default_desert_stone.png^default_mineral_coal.png"},
+	groups = {cracky = 3},
+	drop = 'default:coal_lump',
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+
+
+
+
+--Stairs
+--comment out the stair code if not installed in main game directory-look for global
+
+
+function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
+		desc_stair, desc_slab, sounds)
+	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
+	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
+end
+
+--Technic stairs
+--comment out if not use technic
 stairs.register_stair_and_slab("granite", "technic:granite",
 		{cracky = 1},
 		{"technic_granite.png"},
@@ -205,6 +263,9 @@ stairs.register_stair_and_slab("Chromium Block", "technic:chromium_block",
 		"Chromium Block Slab",
 		default.node_sound_stone_defaults())
 
+
+
+--Extreme Survival Stairs
 stairs.register_stair_and_slab("Ruby", "es:rubyblock",
 		{cracky = 1},
 		{"ruby_block.png"},
@@ -232,7 +293,6 @@ stairs.register_stair_and_slab("Infinium", "es:infiniumblock",
 		"Infinium Block Stair",
 		"Infinium Block Slab",
 		default.node_sound_stone_defaults())
-
 stairs.register_stair_and_slab("Dirt", "default:dirt",
 		{cracky = 1},
 		{"default_dirt.png"},
@@ -240,6 +300,11 @@ stairs.register_stair_and_slab("Dirt", "default:dirt",
 		"Dirt Block Slab",
 		default.node_sound_stone_defaults())
 
+
+
+
+
+	
 
 
 
