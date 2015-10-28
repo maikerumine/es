@@ -28,7 +28,11 @@ dofile(modpath.."/armor.lua")
 -- Craft recipes for items
 dofile(modpath.."/crafting.lua")
 -- Mobs
+<<<<<<< HEAD
 --dofile(modpath.."/mapgen.lua")
+=======
+dofile(modpath.."/mapgen.lua")
+>>>>>>> origin/master
 -- Ore Generation
 -- Nodes
 dofile(modpath.."/nodes.lua")
@@ -38,6 +42,7 @@ dofile(modpath.."/oregen.lua")
 dofile(modpath.."/tools.lua")
 
 
+<<<<<<< HEAD
 --enable_stairsplus = true
 --MOREBLOCKS / STAIRSPLUS SUPPORT
 if moreblocks then
@@ -52,6 +57,22 @@ end
 
 
 --TECHNIC SUPPORT
+=======
+
+--[[MOREBLOCKS / STAIRSPLUS SUPPORT
+if moreblocks then
+dofile(modpath.."/mostair.lua")
+enable_stairsplus = true
+end]]
+
+--[[STAIR SUPPORT
+if stairs then
+dofile(modpath.."/stair.lua")
+end]]
+
+
+--[[TECHNIC SUPPORT
+>>>>>>> origin/master
 if technic then
 dofile(modpath.."/tech.lua")
 end]]

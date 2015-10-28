@@ -121,6 +121,7 @@ minetest.register_craftitem("es:infinium_container", {
 })
 
 
+<<<<<<< HEAD
 --BONEBLOCK
 minetest.register_node("es:boneblock", {
 	description = "Bones",
@@ -139,6 +140,10 @@ minetest.register_node("es:boneblock", {
 		dug = {name="default_gravel_footstep", gain=1.0},
 	}),
 })
+=======
+
+
+>>>>>>> origin/master
 
 
 --Random craft ATM
@@ -236,6 +241,7 @@ minetest.register_node("es:desert_stone_with_coal", {
 
 
 --Stairs
+<<<<<<< HEAD
 --[[comment out the stair code if not installed in main game directory-look for global
 
 
@@ -245,6 +251,17 @@ function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
 	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
 end]]
 
+=======
+--comment out the stair code if not installed in main game directory-look for global
+
+
+function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
+		desc_stair, desc_slab, sounds)
+	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
+	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
+end
+
+>>>>>>> origin/master
 --Technic stairs
 --comment out if not use technic
 stairs.register_stair_and_slab("granite", "technic:granite",
@@ -364,6 +381,11 @@ end
 
 ]]
 
+
+
+
+
+	
 
 
 

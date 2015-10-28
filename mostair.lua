@@ -15,7 +15,11 @@
 es = {}
 
 --Compatibility with Moreblocks / stairsplus
+<<<<<<< HEAD
 enable_stairsplus = true
+=======
+
+>>>>>>> origin/master
 
 if minetest.get_modpath("moreblocks") and enable_stairsplus then
 	register_stair_slab_panel_micro("es", "emeraldblock", "es:emeraldblock",

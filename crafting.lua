@@ -140,6 +140,7 @@ minetest.register_craft({
 })
 --END TECHNIC
 
+<<<<<<< HEAD
 minetest.register_craft({
 	output = 'es:boneblock',
 	recipe = {
@@ -148,6 +149,9 @@ minetest.register_craft({
 		{"bones:bones", "bones:bones", "bones:bones"},
 	},
 })
+=======
+
+>>>>>>> origin/master
 
 
 --ES HELPFUL CRAFTS
@@ -392,7 +396,11 @@ minetest.register_craft({
 	output = "default:mese_crystal",
 	recipe = "es:mesecook_crystal",
 })
+<<<<<<< HEAD
 --MUST HAVE DEFAULT ORE GENERATION SET
+=======
+--MUST HAVE DEFAULT ORE GENERATION SET 
+>>>>>>> origin/master
 minetest.register_craftitem("es:mesecook_crystal", {
 	description = "Cookable Raw MESE",
 	inventory_image = "mese_cook_mese_crystal.png",
