@@ -12,6 +12,10 @@
 --Media(if not stated differently):
 --(c) Copyright (2014-2015) maikerumine; CC-BY-SA 3.0
 
+
+es = {}
+
+
 --Node Definition
 minetest.register_node("es:stone_with_emerald", {
 	description = "Emerald Ore",
@@ -116,6 +120,27 @@ minetest.register_craftitem("es:infinium_container", {
 	inventory_image = "infinium_container.png",
 })
 
+
+--BONEBLOCK
+minetest.register_node("es:boneblock", {
+	description = "Bones",
+	tiles = {
+		"bones_top.png",
+		"bones_bottom.png",
+		"bones_side.png",
+		"bones_side.png",
+		"bones_rear.png",
+		"bones_front.png"
+	},
+	paramtype2 = "facedir",
+	groups = {dig_immediate=2},
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name="default_gravel_footstep", gain=0.5},
+		dug = {name="default_gravel_footstep", gain=1.0},
+	}),
+})
+
+
 --Random craft ATM
 -- Jack 'O Lantern
 --Borrowed from TenPlus1's Farming Plus  Might change to original
@@ -167,8 +192,61 @@ minetest.register_node("es:messymese", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
---Stairs
 
+--default addon
+minetest.register_node("es:stone_with_mese", {
+	description = "Cookable Mese Ore",
+	tiles = {"default_stone.png^mese_cook_mese_crystal.png^default_mineral_mese.png"},
+	paramtype = "light",
+	groups = {cracky = 1},
+	drop = "es:mesecook_crystal",
+	sounds = default.node_sound_stone_defaults(),
+	light_source = 1,
+})
+
+minetest.register_node("es:desert_stone_with_gold", {
+	description = "Gold Ore",
+	tiles = {"default_desert_stone.png^default_mineral_gold.png"},
+	groups = {cracky = 2},
+	drop = "default:gold_lump",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+minetest.register_node("es:desert_stone_with_iron", {
+	description = "Iron Ore",
+	tiles = {"default_desert_stone.png^default_mineral_iron.png"},
+	groups = {cracky = 2},
+	drop = 'default:iron_lump',
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+minetest.register_node("es:desert_stone_with_coal", {
+	description = "Coal Ore",
+	tiles = {"default_desert_stone.png^default_mineral_coal.png"},
+	groups = {cracky = 3},
+	drop = 'default:coal_lump',
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
+
+
+
+
+--Stairs
+--[[comment out the stair code if not installed in main game directory-look for global
+
+
+function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
+		desc_stair, desc_slab, sounds)
+	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
+	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
+end]]
+
+--Technic stairs
+--comment out if not use technic
 stairs.register_stair_and_slab("granite", "technic:granite",
 		{cracky = 1},
 		{"technic_granite.png"},
@@ -205,6 +283,9 @@ stairs.register_stair_and_slab("Chromium Block", "technic:chromium_block",
 		"Chromium Block Slab",
 		default.node_sound_stone_defaults())
 
+
+
+--Extreme Survival Stairs
 stairs.register_stair_and_slab("Ruby", "es:rubyblock",
 		{cracky = 1},
 		{"ruby_block.png"},
@@ -232,13 +313,56 @@ stairs.register_stair_and_slab("Infinium", "es:infiniumblock",
 		"Infinium Block Stair",
 		"Infinium Block Slab",
 		default.node_sound_stone_defaults())
-
 stairs.register_stair_and_slab("Dirt", "default:dirt",
 		{cracky = 1},
 		{"default_dirt.png"},
 		"Dirt Block Stair",
 		"Dirt Block Slab",
 		default.node_sound_stone_defaults())
+
+
+--[[if minetest.get_modpath("moreblocks") and enable_stairsplus then
+	register_stair_slab_panel_micro("es", "emeraldblock", "es:emeraldblock",
+	{cracky=3},
+	{"emerald_block.png"},
+	"Emerald Block",
+	"emeraldblock",
+	0)
+end
+
+if minetest.get_modpath("moreblocks") and enable_stairsplus then
+	register_stair_slab_panel_micro("es", "rubyblock", "es:rubyblock",
+	{cracky=3},
+	{"ruby_block.png"},
+	"Ruby Block",
+	"rubyblock",
+	0)
+end
+
+if minetest.get_modpath("moreblocks") and enable_stairsplus then
+	register_stair_slab_panel_micro("es", "aikerumblock", "es:aikerumblock",
+	{cracky=3},
+	{"aikerum_block.png"},
+	"Aikerum Block",
+	"aikerumblock",
+	0)
+end
+
+if minetest.get_modpath("moreblocks") and enable_stairsplus then
+	register_stair_slab_panel_micro("es", "infiniumblock", "es:infiniumblock",
+	{cracky=3},
+	{"infinium_block.png"},
+	"Infinium Block",
+	"infiniumblock",
+	0)
+end
+--COMMENT OUT STAIRSPLUS IF NOT USE MOREBLOCKS
+	table.insert(circular_saw.known_stairs, "es:emeraldblock")
+	table.insert(circular_saw.known_stairs, "es:rubyblock")
+	table.insert(circular_saw.known_stairs, "es:aikerumblock")
+	table.insert(circular_saw.known_stairs, "es:infiniumblock")
+
+]]
 
 
 
