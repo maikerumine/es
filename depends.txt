@@ -1,5 +1,5 @@
 default
-<<<<<<< HEAD
-=======
-,stairs,3d_armor?,technic?,mese_crystals?
->>>>>>> origin/master
+intllib?
+technic?
+moreblocks?
+stairs?

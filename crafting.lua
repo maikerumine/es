@@ -120,7 +120,7 @@ minetest.register_craft({
 minetest.register_craftitem("es:punkin_slice", {
 	description = "Punkin Slice",
 	inventory_image = "farming_pumpkin_slice.png",
-	on_use = minetest.item_eat(20),
+	on_use = minetest.item_eat(50),
 })
 
 minetest.register_craft({
@@ -138,20 +138,19 @@ minetest.register_craft({
 		{"", "es:punkin", ""},
 	}
 })
+
+
+minetest.register_craft({
+output = 'es:boneblock',
+recipe = {
+{"bones:bones", "bones:bones", "bones:bones"},
+{"bones:bones", "default:steelblock", "bones:bones"},
+{"bones:bones", "bones:bones", "bones:bones"},
+},
+})
 --END TECHNIC
 
-<<<<<<< HEAD
-minetest.register_craft({
-	output = 'es:boneblock',
-	recipe = {
-		{"bones:bones", "bones:bones", "bones:bones"},
-		{"bones:bones", "default:steelblock", "bones:bones"},
-		{"bones:bones", "bones:bones", "bones:bones"},
-	},
-})
-=======
 
->>>>>>> origin/master
 
 
 --ES HELPFUL CRAFTS
@@ -172,12 +171,29 @@ minetest.register_craft({
 		{"default:papyrus", "default:papyrus", "default:papyrus"},
 	},
 })
+
 minetest.register_craft({
 	output = 'default:dirt 2',
 	recipe = {
 		{'stairs:stair_dirt', 'stairs:stair_dirt', 'stairs:stair_dirt'},
 	}
 })
+--[[For ref
+minetest.register_node("default:dirt_with_grass", {
+	description = "Dirt with Grass",
+	tiles = {"default_grass.png", "default_dirt.png",
+		{name = "default_dirt.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {crumbly = 3, soil = 1},
+	drop = 'default:dirt',
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})]]
+
+
+
+
 
 minetest.register_craft({
 	output = 'default:desert_cobble 3',
@@ -392,15 +408,20 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
+	cooktime = 30,
+	output = "es:depleted_uranium_ingot",
+	recipe = "es:depleted_uranium_lump",
+})
+
+
+minetest.register_craft({
+	type = "cooking",
 	cooktime = 90,
 	output = "default:mese_crystal",
 	recipe = "es:mesecook_crystal",
 })
-<<<<<<< HEAD
---MUST HAVE DEFAULT ORE GENERATION SET
-=======
+
 --MUST HAVE DEFAULT ORE GENERATION SET 
->>>>>>> origin/master
 minetest.register_craftitem("es:mesecook_crystal", {
 	description = "Cookable Raw MESE",
 	inventory_image = "mese_cook_mese_crystal.png",

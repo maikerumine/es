@@ -14,11 +14,12 @@
 
 
 
---Alias                      "old"--->"new"  
+--Alias                      "old"--->"new"
 --minetest.register_alias("meru:destone", "default:desert_stone")
 --minetest.register_alias("meru:stone", "default:sandstone")
-
-minetest.register_alias("default:stone_with_mese", "es:stone_with_mese")
+minetest.register_alias("default:desert_stone_with_iron", "es:desert_stone_with_iron")
+minetest.register_alias("default:desert_stone_with_gold", "es:desert_stone_with_gold")
+minetest.register_alias("default:desert_stone_with_coal", "es:desert_stone_with_coal")
 minetest.register_alias("glass:hgglass", "es:hgglass")
 minetest.register_alias("mese_cook:mesecook_crystal", "es:mesecook_crystal")
 minetest.register_alias("default:stone_with_mese", "es:stone_with_mese")

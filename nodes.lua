@@ -13,7 +13,19 @@
 --(c) Copyright (2014-2015) maikerumine; CC-BY-SA 3.0
 
 
-es = {}
+--tweaks and overrides
+--rnd code
+--cactus tweaks
+local function hurt_cactus() -- cactus tweak
+	local name = "default:cactus"
+	local table = minetest.registered_nodes[name];
+	local table2 = {};
+	for i,v in pairs(table) do table2[i] = v end
+	table2.groups.disable_jump = 1
+	table2.damage_per_second = 5
+	minetest.register_node(":"..name, table2)
+end
+hurt_cactus();
 
 
 --Node Definition
@@ -121,32 +133,27 @@ minetest.register_craftitem("es:infinium_container", {
 })
 
 
-<<<<<<< HEAD
 --BONEBLOCK
 minetest.register_node("es:boneblock", {
-	description = "Bones",
+	description = "Bone Blox",
 	tiles = {
-		"bones_top.png",
-		"bones_bottom.png",
-		"bones_side.png",
-		"bones_side.png",
-		"bones_rear.png",
-		"bones_front.png"
+	"bones_top.png",
+	"bones_bottom.png",
+	"bones_side.png",
+	"bones_side.png",
+	"bones_rear.png",
+	"bones_front.png"
 	},
 	paramtype2 = "facedir",
 	groups = {dig_immediate=2},
 	sounds = default.node_sound_dirt_defaults({
-		footstep = {name="default_gravel_footstep", gain=0.5},
-		dug = {name="default_gravel_footstep", gain=1.0},
+	footstep = {name="default_gravel_footstep", gain=0.5},
+	dug = {name="default_gravel_footstep", gain=1.0},
 	}),
 })
-=======
 
 
->>>>>>> origin/master
-
-
---Random craft ATM
+--Random craft [USE FOR SUPER FOOD]
 -- Jack 'O Lantern
 --Borrowed from TenPlus1's Farming Plus  Might change to original
 minetest.register_node("es:punkin", {
@@ -175,6 +182,7 @@ minetest.register_node("es:punkin_on", {
 	end,
 })
 
+--INPERVIOUS GLASS  CANNOT BREAK- Great for prison walls.
 minetest.register_node("es:hgglass", {
 	description = "High Density Glass",
 	drawtype = "glasslike_framed_optional",
@@ -187,7 +195,7 @@ minetest.register_node("es:hgglass", {
 	sounds = default.node_sound_defaults(),
 })
 
-
+--A simple way to store your cookable Mese, and it gives off light!
 minetest.register_node("es:messymese", {
 	description = "Messy MESE Block",
 	tiles = {"default_clay.png^bubble.png^mese_cook_mese_crystal.png"},
@@ -197,8 +205,7 @@ minetest.register_node("es:messymese", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
---default addon
+--Default addons as they should be.  I changed ore generation to keep unique for compatibility.
 minetest.register_node("es:stone_with_mese", {
 	description = "Cookable Mese Ore",
 	tiles = {"default_stone.png^mese_cook_mese_crystal.png^default_mineral_mese.png"},
@@ -217,7 +224,6 @@ minetest.register_node("es:desert_stone_with_gold", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-
 minetest.register_node("es:desert_stone_with_iron", {
 	description = "Iron Ore",
 	tiles = {"default_desert_stone.png^default_mineral_iron.png"},
@@ -225,7 +231,6 @@ minetest.register_node("es:desert_stone_with_iron", {
 	drop = 'default:iron_lump',
 	sounds = default.node_sound_stone_defaults(),
 })
-
 
 minetest.register_node("es:desert_stone_with_coal", {
 	description = "Coal Ore",
@@ -235,24 +240,24 @@ minetest.register_node("es:desert_stone_with_coal", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_node("es:depleted_uranium", {
+	description = "Depleted Uranium Ore",
+	tiles = {"default_stone.png^es_depleted_uranium_ore.png"},
+	groups = {cracky = 3},
+	drop = 'es:depleted_uranium_lump',
+	sounds = default.node_sound_stone_defaults(),
+	light_source = 1,
+})
+
+minetest.register_craftitem("es:depleted_uranium_lump", {
+	description = "Depleted Uranium use for fuel or food!",
+	inventory_image = "es_depleted_uranium_lump.png",
+})
 
 
 
-
-
---Stairs
-<<<<<<< HEAD
+--Stairs and moreblocks code that gave me so much trouble...
 --[[comment out the stair code if not installed in main game directory-look for global
-
-
-function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
-		desc_stair, desc_slab, sounds)
-	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
-	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
-end]]
-
-=======
---comment out the stair code if not installed in main game directory-look for global
 
 
 function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
@@ -261,7 +266,6 @@ function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
 	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
 end
 
->>>>>>> origin/master
 --Technic stairs
 --comment out if not use technic
 stairs.register_stair_and_slab("granite", "technic:granite",
@@ -337,68 +341,42 @@ stairs.register_stair_and_slab("Dirt", "default:dirt",
 		"Dirt Block Slab",
 		default.node_sound_stone_defaults())
 
-
---[[if minetest.get_modpath("moreblocks") and enable_stairsplus then
-	register_stair_slab_panel_micro("es", "emeraldblock", "es:emeraldblock",
-	{cracky=3},
-	{"emerald_block.png"},
-	"Emerald Block",
-	"emeraldblock",
-	0)
-end
-
+	
 if minetest.get_modpath("moreblocks") and enable_stairsplus then
-	register_stair_slab_panel_micro("es", "rubyblock", "es:rubyblock",
-	{cracky=3},
-	{"ruby_block.png"},
-	"Ruby Block",
-	"rubyblock",
-	0)
+register_stair_slab_panel_micro("es", "emeraldblock", "es:emeraldblock",
+{cracky=3},
+{"emerald_block.png"},
+"Emerald Block",
+"emeraldblock",
+0)
 end
-
 if minetest.get_modpath("moreblocks") and enable_stairsplus then
-	register_stair_slab_panel_micro("es", "aikerumblock", "es:aikerumblock",
-	{cracky=3},
-	{"aikerum_block.png"},
-	"Aikerum Block",
-	"aikerumblock",
-	0)
+register_stair_slab_panel_micro("es", "rubyblock", "es:rubyblock",
+{cracky=3},
+{"ruby_block.png"},
+"Ruby Block",
+"rubyblock",
+0)
 end
-
 if minetest.get_modpath("moreblocks") and enable_stairsplus then
-	register_stair_slab_panel_micro("es", "infiniumblock", "es:infiniumblock",
-	{cracky=3},
-	{"infinium_block.png"},
-	"Infinium Block",
-	"infiniumblock",
-	0)
+register_stair_slab_panel_micro("es", "aikerumblock", "es:aikerumblock",
+{cracky=3},
+{"aikerum_block.png"},
+"Aikerum Block",
+"aikerumblock",
+0)
+end
+if minetest.get_modpath("moreblocks") and enable_stairsplus then
+register_stair_slab_panel_micro("es", "infiniumblock", "es:infiniumblock",
+{cracky=3},
+{"infinium_block.png"},
+"Infinium Block",
+"infiniumblock",
+0)
 end
 --COMMENT OUT STAIRSPLUS IF NOT USE MOREBLOCKS
-	table.insert(circular_saw.known_stairs, "es:emeraldblock")
-	table.insert(circular_saw.known_stairs, "es:rubyblock")
-	table.insert(circular_saw.known_stairs, "es:aikerumblock")
-	table.insert(circular_saw.known_stairs, "es:infiniumblock")
-
+table.insert(circular_saw.known_stairs, "es:emeraldblock")
+table.insert(circular_saw.known_stairs, "es:rubyblock")
+table.insert(circular_saw.known_stairs, "es:aikerumblock")
+table.insert(circular_saw.known_stairs, "es:infiniumblock")
 ]]
-
-
-
-
-
-	
-
-
-
---tweaks and overrides
---rnd code
---cactus tweaks
-local function hurt_cactus() -- cactus tweak
-	local name = "default:cactus"
-	local table = minetest.registered_nodes[name];
-	local table2 = {};
-	for i,v in pairs(table) do table2[i] = v end
-	table2.groups.disable_jump = 1
-	table2.damage_per_second = 5
-	minetest.register_node(":"..name, table2)
-end
-hurt_cactus();

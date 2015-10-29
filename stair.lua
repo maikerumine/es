@@ -15,6 +15,15 @@
 
 es = {}
 
+function stairs.register_stair_and_slab(subname, recipeitem, groups, images,
+	desc_stair, desc_slab, sounds)
+	stairs.register_stair(subname, recipeitem, groups, images, desc_stair, sounds)
+	stairs.register_slab(subname, recipeitem, groups, images, desc_slab, sounds)
+end
+
+
+
+
 --Extreme Survival Stairs
 stairs.register_stair_and_slab("Ruby", "es:rubyblock",
 		{cracky = 1},

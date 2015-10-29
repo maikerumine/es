@@ -12,9 +12,11 @@
 --Media(if not stated differently):
 --(c) Copyright (2014-2015) maikerumine; CC-BY-SA 3.0
 
-
-
 es = {}
+--NOTE:  THIS--v  v--MUST BE FIRST IN THE INIT FOR EVERYTHING TO WORK
+enable_stairsplus = true
+
+
 
 local load_start = os.clock()
 local modpath = minetest.get_modpath("es")
@@ -27,13 +29,10 @@ dofile(modpath.."/alias.lua")
 dofile(modpath.."/armor.lua")
 -- Craft recipes for items
 dofile(modpath.."/crafting.lua")
--- Mobs
-<<<<<<< HEAD
+
+-- Mapgen?
 --dofile(modpath.."/mapgen.lua")
-=======
-dofile(modpath.."/mapgen.lua")
->>>>>>> origin/master
--- Ore Generation
+
 -- Nodes
 dofile(modpath.."/nodes.lua")
 -- Ore Generation
@@ -42,40 +41,24 @@ dofile(modpath.."/oregen.lua")
 dofile(modpath.."/tools.lua")
 
 
-<<<<<<< HEAD
---enable_stairsplus = true
+--THESE ARE BROKEN AND STORED IN THE nodes.lua
+--Something about global is nil...
 --MOREBLOCKS / STAIRSPLUS SUPPORT
 if moreblocks then
 dofile(modpath.."/mostair.lua")
-enable_stairsplus = true
+--enable_stairsplus = true
 end
 
---[[STAIR SUPPORT
+--STAIR SUPPORT
 if stairs then
 dofile(modpath.."/stair.lua")
 end
 
 
 --TECHNIC SUPPORT
-=======
-
---[[MOREBLOCKS / STAIRSPLUS SUPPORT
-if moreblocks then
-dofile(modpath.."/mostair.lua")
-enable_stairsplus = true
-end]]
-
---[[STAIR SUPPORT
-if stairs then
-dofile(modpath.."/stair.lua")
-end]]
-
-
---[[TECHNIC SUPPORT
->>>>>>> origin/master
 if technic then
 dofile(modpath.."/tech.lua")
-end]]
+end
 
 
 -- Map Generation (CURRENTLY YOU NEED TO REPLACE THE DEFAULT WITH the one that says stone IF YOU WANT AN ALL STONE WORLD.)
