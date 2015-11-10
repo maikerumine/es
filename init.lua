@@ -40,6 +40,11 @@ dofile(modpath.."/oregen.lua")
 -- Tools
 dofile(modpath.."/tools.lua")
 
+-- Climate
+dofile(minetest.get_modpath("es").."/freeze.lua")
+dofile(minetest.get_modpath("es").."/snow.lua")
+
+
 
 --THESE ARE BROKEN AND STORED IN THE nodes.lua
 --Something about global is nil...
