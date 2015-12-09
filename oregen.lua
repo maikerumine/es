@@ -13,11 +13,36 @@
 --(c) Copyright (2014-2015) maikerumine; CC-BY-SA 3.0
 
 
+--TECHNIC ORES
+minetest.register_ore({
+	ore_type       = "sheet",
+	ore            = "es:marble",
+	wherein        = "default:stone",
+	clust_scarcity = 1,
+	clust_num_ores = 1,
+	clust_size     = 3,
+	height_min     = -31000,
+	height_max     = -50,
+	noise_threshhold = 0.4,
+	noise_params = {offset=0, scale=15, spread={x=150, y=150, z=150}, seed=23, octaves=3, persist=0.70}
+})
+
+minetest.register_ore({
+	ore_type       = "sheet",
+	ore            = "es:granite",
+	wherein        = "default:stone",
+	clust_scarcity = 1,
+	clust_num_ores = 1,
+	clust_size     = 4,
+	height_min     = -31000,
+	height_max     = -150,
+	noise_threshhold = 0.4,
+	noise_params = {offset=0, scale=15, spread={x=130, y=130, z=130}, seed=24, octaves=3, persist=0.70}
+})
 
 
 
---Node Registration and location
-
+--ES Node Registration and location
 minetest.register_ore({
 		    ore_type       = "scatter",
 		    ore            = "es:stone_with_emerald",

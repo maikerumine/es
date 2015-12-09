@@ -28,7 +28,32 @@ end
 hurt_cactus();
 
 
---Node Definition
+--TECHNIC NODES
+minetest.register_node( "es:granite", {
+	description = "Granite",
+	tiles = { "technic_granite.png" },
+	is_ground_content = true,
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+}) 
+
+minetest.register_node( "es:marble", {
+	description = "Marble",
+	tiles = { "technic_marble.png" },
+	is_ground_content = true,
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+}) 
+
+minetest.register_node( "es:marble_bricks", {
+	description = "Marble Bricks",
+	tiles = { "technic_marble_bricks.png" },
+	is_ground_content = true,
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+--ES Node Definition
 minetest.register_node("es:stone_with_emerald", {
 	description = "Emerald Ore",
 	tiles = {"default_stone.png^emerald_ore.png"},
@@ -152,7 +177,7 @@ minetest.register_node("es:boneblock", {
 	}),
 })
 
-
+--[[
 --Random craft [USE FOR SUPER FOOD]
 -- Jack 'O Lantern
 --Borrowed from TenPlus1's Farming Plus  Might change to original
@@ -181,7 +206,7 @@ minetest.register_node("es:punkin_on", {
 		minetest.set_node(pos, node)
 	end,
 })
-
+]]
 --INPERVIOUS GLASS  CANNOT BREAK- Great for prison walls.
 minetest.register_node("es:hgglass", {
 	description = "High Density Glass",
