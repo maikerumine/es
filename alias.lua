@@ -111,6 +111,5 @@ tecnodrem = {}
 --Alias                      "old"--->"new"
 
 --ES STUFF
-minetest.register_alias("es:punkin", "es:messymese")
-minetest.register_alias("es:punkin_on", "es:messymese")
+minetest.register_alias("default:stone_with_mese", "es:stone_with_mese")  --MUST COMMENT OUT DEFAULT NODE FIRST
 
