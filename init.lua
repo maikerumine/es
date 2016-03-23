@@ -52,6 +52,7 @@ dofile(modpath.."/oregen.lua")
 
 -- Tools
 dofile(modpath.."/tools.lua")
+dofile(modpath.."/screwdriver.lua")
 --dofile(modpath.."/hoes.lua")
 
 -- Climate  very laggy
