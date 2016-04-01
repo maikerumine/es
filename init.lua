@@ -16,9 +16,6 @@ es = {}
 --NOTE:  THIS--v  v--MUST BE FIRST IN THE INIT FOR EVERYTHING TO WORK
 enable_stairsplus = true
 
-
-
-
 local load_start = os.clock()
 local modpath = minetest.get_modpath("es")
 es.modpath = modpath
@@ -81,7 +78,7 @@ dofile(modpath.."/stair.lua")
 end
 
 --CONFIG SWITCHES
-	es.MAP_SETTING = 0;	--Enter a number between 0 and 5 to choose map style.  See line 83 for details.
+	es.MAP_SETTING = 5;	--Enter a number between 0 and 5 to choose map style.  See line 83 for details.
 
 --MAP GENERATION SELECTION SWITCH
 --(CURRENTLY YOU NEED TO REPLACE THE DEFAULT WITH
@@ -104,8 +101,8 @@ end
 	if es.MAP_SETTING == 4 then	--NO DESERT OR COLD CLIMATE
 		dofile(modpath.."/mapgen-v7green.lua")
 	end
-	if es.MAP_SETTING == 5 then	--ALWAYS CURRENT  FROM MINETEST_GAME
-		dofile(modpath.."/mapgen-v7green_current.lua")
+	if es.MAP_SETTING == 5 then	--CUSTOM ES
+		dofile(modpath.."/mapgen-v7es_custom.lua")
 	end
 
 
