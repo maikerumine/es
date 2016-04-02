@@ -861,6 +861,23 @@ function default.register_biomes()
 		heat_point = 75,
 		humidity_point = 50,
 	})
+		minetest.register_biome({
+		name = "barren",
+		--node_dust = "",
+		node_top = "es:dry_dirt",
+		depth_top = 1,
+		node_filler = "es:dry_dirt",
+		depth_filler = 1,
+		node_stone = "default:desert_stone",
+		--node_water_top = "",
+		--depth_water_top = ,
+		--node_water = "",
+		--node_river_water = "",
+		y_min = 1,
+		y_max = 31000,
+		heat_point = 82,
+		humidity_point = 20,
+	})
 	minetest.register_biome({
 		name = "strangeland_ocean",
 		--node_dust = "",
@@ -877,6 +894,25 @@ function default.register_biomes()
 		y_max = 4,
 		heat_point = 75,
 		humidity_point = 20,
+	})
+
+
+	minetest.register_biome({
+		name = "clay",
+		--node_dust = "",
+		node_top = "es:strange_clay_brown",
+		depth_top = 1,
+		node_filler = "es:strange_clay_red",
+		depth_filler = 1,
+		node_stone = "default:clay",
+		--node_water_top = "",
+		--depth_water_top = ,
+		--node_water = "",
+		--node_river_water = "",
+		y_min = 0,
+		y_max = 55,
+		heat_point = 66,
+		humidity_point = 30,
 	})
 
 
@@ -1022,7 +1058,7 @@ end
 local function register_grass_decoration(offset, scale, length)
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:dirt_with_grass", "default:sand","es:strange_grass","es:aiden_grass"},
+		place_on = {"default:dirt_with_grass", "default:sand","es:aiden_grass"},
 		sidelen = 16,
 		noise_params = {
 			offset = offset,
@@ -1035,7 +1071,7 @@ local function register_grass_decoration(offset, scale, length)
 		biomes = {"stone_grassland", "sandstone_grassland",
 			"deciduous_forest", "coniferous_forest",
 			"stone_grassland_dunes", "sandstone_grassland_dunes",
-			"coniferous_forest_dunes","strangeland","aidenland"},
+			"coniferous_forest_dunes","aidenland"},
 		y_min = 1,
 		y_max = 31000,
 		decoration = "default:grass_"..length,
@@ -1055,7 +1091,7 @@ local function register_dry_grass_decoration(offset, scale, length)
 			octaves = 3,
 			persist = 0.6
 		},
-		biomes = {"savanna"},
+		biomes = {"savanna","barren"},
 		y_min = 1,
 		y_max = 31000,
 		decoration = "default:dry_grass_"..length,
@@ -1064,6 +1100,66 @@ end
 
 function default.register_decorations()
 	minetest.clear_registered_decorations()
+
+	--Wasteland
+	--The buildings found in this mod (in the schems/ folder) have been built by
+	--AgentNagel42. See https://forum.minetest.net/viewtopic.php?f=5&t=13297
+		minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"es:dry_dirt"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.003,
+			scale = 0.005,
+			spread = {x = 250, y = 250, z = 250},
+			seed = 2,
+			octaves = 3,
+			persist = 0.66
+		},
+		biomes = {"barren"},
+		y_min = 6,
+		y_max = 200,
+		schematic = minetest.get_modpath("es").."/schematics/watchtower_old.mts",
+		flags = "place_center_x, place_center_z",
+	})
+
+		minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"es:dry_dirt"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.003,
+			scale = 0.005,
+			spread = {x = 250, y = 250, z = 250},
+			seed = 2,
+			octaves = 3,
+			persist = 0.66
+		},
+		biomes = {"barren"},
+		y_min = 6,
+		y_max = 200,
+		schematic = minetest.get_modpath("es").."/schematics/cabin_old.mts",
+		flags = "place_center_x, place_center_z",
+	})
+
+			minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {"es:dry_dirt"},
+		sidelen = 16,
+		noise_params = {
+			offset = -0.003,
+			scale = 0.007,
+			spread = {x = 250, y = 250, z = 250},
+			seed = 2,
+			octaves = 3,
+			persist = 0.66
+		},
+		biomes = {"barren"},
+		y_min = 6,
+		y_max = 200,
+		schematic = minetest.get_modpath("es").."/schematics/old_tree.mts",
+		flags = "place_center_x, place_center_z",
+	})
 
 	-- Apple tree and log
 
@@ -1404,10 +1500,10 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:dirt_with_grass","es:strange_grass","es:aiden_grass"},
+		place_on = {"default:dirt_with_grass","es:aiden_grass"},
 		sidelen = 80,
 		fill_ratio = 0.1,
-		biomes = {"rainforest","strangeland","aidenland"},
+		biomes = {"rainforest","aidenland"},
 		y_min = 1,
 		y_max = 31000,
 		decoration = "default:junglegrass",
@@ -1417,7 +1513,7 @@ function default.register_decorations()
 
 	minetest.register_decoration({
 		deco_type = "simple",
-		place_on = {"default:desert_sand", "default:dirt_with_snow","es:strange_grass","es:aiden_grass"},
+		place_on = {"default:desert_sand", "default:dirt_with_snow","es:strange_grass","es:aiden_grass","es:brown_clay"},
 		sidelen = 16,
 		noise_params = {
 			offset = 0,
