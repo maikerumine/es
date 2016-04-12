@@ -2,6 +2,7 @@
 -- Minetest 0.4.13 mod: "Extreme Survival"
 -- namespace: es
 --https://github.com/maikerumine
+--version 1.8
 
 --License:
 --~~~~~~~~
@@ -35,6 +36,8 @@ dofile(modpath.."/tools.lua")
 dofile(modpath.."/extra.lua")
 dofile(modpath.."/nodes.lua")
 dofile(modpath.."/oregen.lua")
+dofile(modpath.."/cavespace.lua")
+--dofile(modpath.."/invis.lua")
 --dofile(modpath.."/map.lua")
 -- Climate  very laggy
 --dofile(minetest.get_modpath("es").."/freeze.lua")
