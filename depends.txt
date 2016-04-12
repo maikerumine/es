@@ -1,4 +1,6 @@
 default
+farming?
+flowers?
 stairs
 cblocks?
 moreblocks?

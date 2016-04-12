@@ -1,8 +1,8 @@
 --Extreme Survival created by maikerumine
 -- Minetest 0.4.13 mod: "Extreme Survival"
 -- namespace: es
---https://github.com/maikerumine
 --version 1.8
+--https://github.com/maikerumine
 
 --License:
 --~~~~~~~~
@@ -33,6 +33,16 @@ dofile(modpath.."/shutdown.lua")
 dofile(modpath.."/spawn.lua")
 dofile(modpath.."/crushingfurnace.lua")
 dofile(modpath.."/tools.lua")
+dofile(modpath.."/biome.lua")
+
+if farming then
+	dofile(modpath.."/farming.lua")
+end
+
+if flowers then
+	dofile(modpath.."/flowers.lua")
+end
+
 dofile(modpath.."/extra.lua")
 dofile(modpath.."/nodes.lua")
 dofile(modpath.."/oregen.lua")

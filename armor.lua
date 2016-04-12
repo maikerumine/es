@@ -1,6 +1,7 @@
 --Extreme Survival created by maikerumine
 -- Minetest 0.4.13 mod: "Extreme Survival"
 -- namespace: es
+--version 1.8
 --https://github.com/maikerumine
 
 --License:

@@ -1,6 +1,7 @@
 --Extreme Survival created by maikerumine
 -- Minetest 0.4.13 mod: "Extreme Survival"
 -- namespace: es
+--version 1.8
 --https://github.com/maikerumine
 
 --License:
@@ -23,7 +24,17 @@ minetest.register_alias("default:desert_stone_with_gold", "es:desert_stone_with_
 minetest.register_alias("default:desert_stone_with_coal", "es:desert_stone_with_coal")
 minetest.register_alias("default:stone_with_mese", "es:stone_with_mese")
 minetest.register_alias("protector_mese:protect", "protector:protect")
+
+
 minetest.register_alias("es:strange_clay", "es:strange_clay_blue")
+
+minetest.register_alias("cblocks:clay_magenta", "es:strange_clay_maroon")
+minetest.register_alias("cblocks:clay_black", "es:strange_clay_black")
+minetest.register_alias("cblocks:clay_red", "es:strange_clay_red")
+minetest.register_alias("cblocks:clay_grey", "es:strange_clay_grey")
+minetest.register_alias("cblocks:clay_orange", "es:strange_clay_orange")
+minetest.register_alias("cblocks:clay_brown", "es:strange_clay_brown")
+
 
 --This is to fix the old interaction with my modified 3d_armor mod.
 --NEED TO USE THIS FOR 3-D ARMOUR TO WORK!!!!!

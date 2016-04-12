@@ -1,6 +1,7 @@
 --Extreme Survival created by maikerumine
 -- Minetest 0.4.13 mod: "Extreme Survival"
 -- namespace: es
+--version 1.8
 --https://github.com/maikerumine
 
 --License:
@@ -40,10 +41,10 @@ minetest.register_ore({
 	noise_params = {offset=0, scale=15, spread={x=130, y=130, z=130}, seed=24, octaves=3, persist=0.70}
 })
 
---CBLOCKS CLAY!!
+--CLAY!!
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_magenta",
+	ore            = "es:strange_clay_maroon",
 	wherein        = {"default:desert_stone"},
 	clust_scarcity = 1,
 	clust_num_ores = 3,
@@ -56,7 +57,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_black",
+	ore            = "es:strange_clay_black",
 	wherein        = {"default:desert_stone","default:stone"},
 	clust_scarcity = 1,
 	clust_num_ores = 12,
@@ -69,7 +70,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_red",
+	ore            = "es:strange_clay_red",
 	wherein        = {"default:desert_stone"},
 	clust_scarcity = 1,
 	clust_num_ores = 8,
@@ -82,7 +83,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_grey",
+	ore            = "es:strange_clay_grey",
 	wherein        = {"default:desert_stone"},
 	clust_scarcity = 1,
 	clust_num_ores = 8,
@@ -95,7 +96,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_orange",
+	ore            = "es:strange_clay_orange",
 	wherein        ={"default:desert_stone","default:desert_sand"},
 	clust_scarcity = 1,
 	clust_num_ores = 5,
@@ -108,7 +109,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_brown",
+	ore            = "es:strange_clay_brown",
 	wherein        = {"default:desert_stone","default:desert_sand"},
 	clust_scarcity = 1,
 	clust_num_ores = 12,
@@ -119,7 +120,6 @@ minetest.register_ore({
 	noise_params = {offset=0, scale=15, spread={x=130, y=130, z=130}, seed=24, octaves=3, persist=0.70}
 })
 
---ES Clay
 minetest.register_ore({
 	ore_type       = "sheet",
 	ore            = "es:strange_clay_red",
@@ -148,7 +148,7 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "sheet",
-	ore            = "cblocks:clay_black",
+	ore            = "es:strange_clay_black",
 	wherein        = {"es:strange_clay_brown"},
 	clust_scarcity = 1,
 	clust_num_ores = 12,

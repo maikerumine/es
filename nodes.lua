@@ -1,7 +1,7 @@
 --Extreme Survival created by maikerumine
 -- Minetest 0.4.13 mod: "Extreme Survival"
 -- namespace: es
--- version 1.8
+--version 1.8
 --https://github.com/maikerumine
 
 --License:
@@ -37,7 +37,7 @@ local function hurt_cactus() -- cactus tweak
 	minetest.register_node(":"..name, table2)
 end
 hurt_cactus();
-
+--[[
 -- Over time Cobble placed in water changes to Mossy Cobble
 --From Etheral
 minetest.register_abm({
@@ -50,7 +50,7 @@ minetest.register_abm({
 		minetest.swap_node(pos, {name = "default:mossycobble"})
 	end
 })
-
+]]
 --TECHNIC NODES
 minetest.register_node( "es:granite", {
 	description = "Granite",
@@ -484,47 +484,7 @@ minetest.register_node("es:vault", {
 	end,
 	on_blast = function() end,
 })
---[[
---Protector chest buttons code
-minetest.register_on_player_receive_fields(function(player, formname, fields)
-	if string.sub(formname, 0, string.len("es:vault_")) == "es:vault_" then
-		local pos_s = string.sub(formname,string.len("es:vault_") + 1)
-		local pos = minetest.string_to_pos(pos_s)
-		local meta = minetest.get_meta(pos)
-		local chest_inv = meta:get_inventory()
-		local player_inv = player:get_inventory()
-		local leftover
 
-		if fields.toup then
-			-- copy contents of players inventory to chest
-			for i, v in pairs (player_inv:get_list("main") or {}) do
-				if chest_inv
-				and chest_inv:room_for_item('main', v) then
-					leftover = chest_inv:add_item('main', v)
-					player_inv:remove_item("main", v)
-					if leftover
-					and not leftover:is_empty() then
-						player_inv:add_item("main", v)
-					end
-				end
-			end
-
-		elseif fields.todn then
-			-- copy contents of chest to players inventory
-			for i, v in pairs (chest_inv:get_list('main') or {}) do
-				if player_inv:room_for_item("main", v) then
-					leftover = player_inv:add_item("main", v)
-					chest_inv:remove_item('main', v)
-					if leftover
-					and not leftover:is_empty() then
-						chest_inv:add_item('main', v)
-					end
-				end
-			end
-			end
-	end
-end)
-]]
 
 
 --CUSTOM biome stuff
@@ -628,26 +588,7 @@ minetest.register_node("es:strange_shrub", {
 	walkable = false,
 	tiles = {"default_jungleleaves.png^default_dry_shrub.png^[colorize:#0000FF:170"},
 	groups = {snappy = 3, flammable = 2, leaves = 1},
-	--[[
-	drop = {
-		max_items = 1,
-		items = {
-			{
-				-- player will get sapling with 1/20 chance
-				items = {'default:apple'},
-				rarity = 20,
-			},
-			{
-				-- player will get leaves only if he get no saplings,
-				-- this is because max_items is 1
-				items = {'default:stick'},
-			}
-		}
-	},
-	]]
 	sounds = default.node_sound_leaves_defaults(),
-
-	--after_place_node = default.after_place_leaves,
 })
 
 minetest.register_node("es:strange_clay_blue", {
@@ -680,7 +621,31 @@ minetest.register_node("es:strange_clay_brown", {
 	description = "Strange Clay Brown",
 	tiles = {"default_clay.png^[colorize:#61210B:180"},
 	groups = {crumbly = 3},
-	drop = 'default:clay_lump 4',
+	--drop = 'default:clay_lump 4',
+	sounds = default.node_sound_dirt_defaults(),
+})
+
+minetest.register_node("es:strange_clay_orange", {
+	description = "Strange Clay Orange",
+	tiles = {"default_clay.png^[colorize:#FE642E:180"},
+	groups = {crumbly = 3},
+	--drop = 'default:clay_lump 4',
+	sounds = default.node_sound_dirt_defaults(),
+})
+
+minetest.register_node("es:strange_clay_black", {
+	description = "Strange Clay Black",
+	tiles = {"default_clay.png^[colorize:#151515:180"},
+	groups = {crumbly = 3},
+	--drop = 'default:clay_lump 4',
+	sounds = default.node_sound_dirt_defaults(),
+})
+
+minetest.register_node("es:strange_clay_grey", {
+	description = "Strange Clay Black",
+	tiles = {"default_clay.png^[colorize:#848484:180"},
+	groups = {crumbly = 3},
+	--drop = 'default:clay_lump 4',
 	sounds = default.node_sound_dirt_defaults(),
 })
 
