@@ -20,10 +20,10 @@ es = {}
 --Modified by maikerumine
 -- Time to shut down server.
 -- Default is twice a day: at 06:05 and 18:05
-local H = 00
+local H = 06
 local X = 06
-local Y = 12
-local Z = 18
+local Y = 06
+local Z = 06
 
 local M = 00
 local N = 01
@@ -41,7 +41,7 @@ minetest.register_globalstep(function(dtime)
    local t = os.date("*t")
    if ((t.hour == H or t.hour == X or t.hour == Y or t.hour == Z) and (t.min == M) and (t.sec <= 2)
          and ((D == nil) or (t.wday == D))) then
-      minetest.chat_send_all("Scheduled shutdown.  12:00 P.M. Eastern Time Zone --1600 UTC--"
+      minetest.chat_send_all("Scheduled shutdown.  0600 Eastern Time Zone"
             .."Shutting down in ONE minute.")
 	          minetest.chat_send_all("Do not use chests or inventory at this time. "
             .."Shutting down in ONE minute.")

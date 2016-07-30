@@ -25,6 +25,16 @@ minetest.override_item('default:stone_with_mese', {
      },
 })
 
+--compressed cobble
+minetest.register_node("es:compressedcobble", {
+	description = "Compressed Cobblestone",
+	tiles = {"default_cobble.png^default_ladder.png^[colorize:#000000:170"},
+	is_ground_content = false,
+	groups = {cracky = 3, stone = 2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+
 --rnd code
 --cactus tweaks
 local function hurt_cactus() -- cactus tweak
@@ -727,7 +737,7 @@ minetest.register_node("es:dry_dirt", {
 	drop = 'es:dry_dirt',
 	sounds = default.node_sound_dirt_defaults(),
 })
-
+--[[
 minetest.register_node("es:stone_with_mese", {
 	description = "Cookable Mese Ore",
 	tiles = {"default_stone.png^default_mineral_mese.png"},
@@ -737,7 +747,7 @@ minetest.register_node("es:stone_with_mese", {
 	sounds = default.node_sound_stone_defaults(),
 	light_source = 1,
 })
-
+]]
 minetest.register_node("es:desert_stone_with_gold", {
 	description = "Gold Ore",
 	tiles = {"default_desert_stone.png^default_mineral_gold.png"},

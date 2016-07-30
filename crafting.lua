@@ -63,6 +63,24 @@ minetest.register_craft({
 })
 --END BONE COLLECTOR
 
+--compressed cobble
+minetest.register_craft({
+	output = 'es:compressedcobble',
+	recipe = {
+		{'default:cobble', 'default:cobble', 'default:cobble'},
+		{'default:cobble', 'default:cobble', 'default:cobble'},
+		{'default:cobble', 'default:cobble', 'default:cobble'},
+	}
+})
+minetest.register_craft({
+	output = 'default:cobble 9',
+	recipe = {
+		{'es:compressedcobble'},
+	}
+})
+
+
+--marble and granite bricks
 minetest.register_craft({
 	output = 'es:marble_bricks',
 	recipe = {
@@ -435,6 +453,33 @@ minetest.register_craftitem("es:emerald_dust", {
 	description = "Emerald Dust",
 	inventory_image = "dye_green.png",
 })
+
+
+--ES RUBBER
+minetest.register_craftitem("es:rubber_dust", {
+	description = "Rubber Dust",
+	inventory_image = "dye_black.png",
+})
+
+minetest.register_craftitem("es:rubber", {
+	description = "Rubber",
+	inventory_image = "black.png^gui_hotbar_selected.png",
+})
+
+
+minetest.register_craft({
+	--type = "shapeless",
+	output = 'es:rubber_dust 12',
+	recipe = {
+	{"moretrees:rubber_tree_trunk", "moretrees:rubber_tree_trunk","moretrees:rubber_tree_trunk"},
+	{"default:steel_ingot", "default:steel_ingot","default:steel_ingot"},
+	{"moretrees:rubber_tree_trunk", "moretrees:rubber_tree_trunk","moretrees:rubber_tree_trunk"},
+	},
+})
+
+
+
+
 
 --purpellium potion give endurance
 minetest.register_node("es:purpellium_container", {
@@ -1094,4 +1139,9 @@ minetest.register_craft({
 	recipe = "es:emerald_dust",
 })
 
-
+minetest.register_craft({
+	type = "cooking",
+	cooktime = 90,
+	output = "es:rubber",
+	recipe = "es:rubber_dust",
+})
