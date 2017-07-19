@@ -21,20 +21,22 @@ enable_stairsplus = true
 local modpath = minetest.get_modpath("es")
 es.modpath = modpath
 
+dofile(modpath.."/alias.lua")
 dofile(modpath.."/crafting.lua")
 dofile(modpath.."/antigrief.lua")
 dofile(modpath.."/armor.lua")
+dofile(modpath.."/kill.lua")
 dofile(modpath.."/shields.lua")
 dofile(modpath.."/shutdown.lua")
 dofile(modpath.."/spawn.lua")
 dofile(modpath.."/crushingfurnace.lua")
 dofile(modpath.."/tools.lua")
 dofile(modpath.."/biome.lua")
-
+--[[
 if farming then
 	dofile(modpath.."/farming.lua")
 end
-
+]]
 if flowers then
 	dofile(modpath.."/flowers.lua")
 end
