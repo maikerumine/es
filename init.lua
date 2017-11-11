@@ -27,7 +27,7 @@ dofile(modpath.."/antigrief.lua")
 dofile(modpath.."/armor.lua")
 dofile(modpath.."/kill.lua")
 dofile(modpath.."/shields.lua")
-dofile(modpath.."/shutdown.lua")
+--dofile(modpath.."/shutdown.lua")
 dofile(modpath.."/spawn.lua")
 dofile(modpath.."/crushingfurnace.lua")
 dofile(modpath.."/tools.lua")
@@ -42,6 +42,10 @@ if flowers then
 end
 
 dofile(modpath.."/extra.lua")
+dofile(modpath.."/item_entity.lua")
+dofile(modpath.."/builtin_flowlib.lua")
+dofile(modpath.."/flowlib.lua")
+dofile(modpath.."/hudclock.lua")
 dofile(modpath.."/nodes.lua")
 dofile(modpath.."/oregen.lua")
 dofile(modpath.."/cavespace.lua")
@@ -61,7 +65,7 @@ end
 
 --MOREBLOCKS / STAIRSPLUS SUPPORT
 --if moreblocks then
---dofile(modpath.."/mostair.lua")
+dofile(modpath.."/mostair.lua")
 --end
 
 --STAIR SUPPORT
